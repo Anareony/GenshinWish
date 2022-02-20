@@ -1,4 +1,4 @@
-# genshinchecker
+# genshinwish
 
 ## Project setup
 ```

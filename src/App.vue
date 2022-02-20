@@ -1,30 +1,52 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <div class="app">
+        <post-form @create="createPost"/>
+        <post-list
+            :posts="posts"
+            @remove="removePost"
+        />
+    </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import PostForm from '@/components/PostForm'
+import PostList from '@/components/PostList'
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+    components: {
+        PostList, PostForm
+    },
+    data() {
+        return {
+            posts: [
+                {id: 1, title: 'JS', body: 'Описание поста'},
+                {id: 2, title: 'JS 2', body: 'Описание поста 2'},
+                {id: 3, title: 'JS 3', body: 'Описание поста 3'},
+            ]
+        }
+    },
+    methods: {
+        createPost(post) {
+            this.posts.push(post)
+        },
+        removePost(post) {
+            this.posts = this.posts.filter(p => p.id !== post.id)
+        }
     }
-  }
+}
+</script>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.app {
+    margin: 15px;
+}
+form {
+    display: flex;
+    flex-direction: column;
 }
 </style>
