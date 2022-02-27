@@ -21,6 +21,9 @@ export default {
 .input {
     width: 100%;
     border: 1px solid grey;
+    border-radius: 25px;
+    background-color: rgb(20, 20, 20);
+    color: inherit;
     padding: 15px;
     margin-top: 15px;
 }

@@ -1,5 +1,5 @@
 <template>
-    <select v-model="modelValue" @change="changeOption">
+    <select class="select" v-model="modelValue" @change="changeOption">
         <option disabled value="">Выберите из списка</option>
         <option 
             v-for="option in options" 
@@ -31,6 +31,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.select {
+    background-color: rgb(20, 20, 20);
+    color: inherit;
+    border-radius: 25px;
+}
 </style>

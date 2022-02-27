@@ -1,5 +1,5 @@
 <template>
-    <button class="button" >
+    <button class="button"  >
     <slot></slot>
     </button>
 </template>
@@ -7,6 +7,7 @@
 <script>
 export default {
     name: 'my-button',
+    
 }
 </script>
 
@@ -14,7 +15,15 @@ export default {
 .button {
     padding: 15px;
     background: none;
-    color: grey;
-    border: 1px solid grey;
+    color: white;
+    border: none;
+    opacity: 0.75;
+    cursor: pointer;
+    font-size: 18px;
 }
+
+.button:hover {
+    opacity: 1;
+}
+
 </style>
