@@ -1,12 +1,14 @@
 <template>
+    <Navbar></Navbar>
     <div class="app">
         <router-view></router-view>
     </div>
 </template>
 
 <script>
+import Navbar from "./components/Navbar.vue";
 export default {
-
+    components: { Navbar }
 }
 </script>
 
@@ -16,7 +18,20 @@ export default {
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: rgb(24, 24, 24);
+    color: white;
+}
+
+a{
+    outline: none;
+    text-decoration: none;
+}
+
+
 .app {
-    margin: 15px;
+    margin-left: 200px;
+    padding: 15px;
 }
 </style>
