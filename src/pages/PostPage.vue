@@ -15,8 +15,6 @@
                 v-model="selectedSort"
                 :options="sortOptions"
             />
-
-
         </div>
         <my-dialog v-model:show="dialogVisible">
             <post-form @create="createPost"/>
@@ -46,23 +44,7 @@ export default {
     MyInput
 },
     data() {
-        return {
-            posts: [
-                {id: 1, title: '11 JS', body: '1Описание поста'},
-                {id: 2, title: '3 JS 2', body: '2Описание поста 2'},
-                {id: 3, title: '4 JS ', body: '3Описание поста 3'},
-                {id: 4, title: '7 JS', body: '1Описание поста'},
-                {id: 5, title: '9 JS 2', body: '2Описание поста 2'},
-                {id: 6, title: '10 JS ', body: '3Описание поста 3'},
-            ],
-            dialogVisible: false,
-            selectedSort: '',
-            searchQuery: '',
-            sortOptions: [
-                {value: 'title', name: 'По названию'},
-                {value: 'body', name: 'По содержанию'}
-            ]
-            
+        return {  
         }
     },
     methods: {
@@ -78,14 +60,6 @@ export default {
         }
     },
     computed: {
-        sortedPosts() {
-            return [...this.posts].sort( (post1, post2) =>  post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]) )
-        },
-        searchedPosts() {
-            return this.sortedPosts.filter( post => post.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
-        }
-    },
-    watch: {
 
     }
 }
