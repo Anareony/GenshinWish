@@ -1,5 +1,5 @@
 <template>
-  <h1>ඞ</h1>
+  
 </template>
 
 <script>
