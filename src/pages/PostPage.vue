@@ -2,7 +2,8 @@
     <div>
         <h1>Страница с постами</h1>
         <my-input
-            v-model="searchQuery"
+            :model-value="searchQuery"
+            @update:model-value="setSearchQuery"
             placeholder="Поиск..."
         />
         <div class="app__btns">
@@ -12,7 +13,8 @@
                 Создать пост
             </my-button>
             <my-select
-                v-model="selectedSort"
+                :model-value="selectedSort"
+                @update:model-value="setSelectedSort"
                 :options="sortOptions"
             />
         </div>
@@ -33,6 +35,7 @@ import MyDialog from '@/components/UI/MyDialog.vue'
 import MyButton from '@/components/UI/MyButton.vue'
 import MySelect from '@/components/UI/MySelect.vue'
 import MyInput from '@/components/UI/MyInput.vue'
+import {mapState, mapGetters, mapActions, mapMutations} from 'vuex'
 
 export default {
     components: {
@@ -44,10 +47,15 @@ export default {
     MyInput
 },
     data() {
-        return {  
+        return {
+            dialogVisible: false,
         }
     },
     methods: {
+        ...mapMutations({
+            setSelectedSort: 'post/setSelectedSort',
+            setSearchQuery: 'post/setSearchQuery',
+        }),
         createPost(post) {
             this.posts.push(post);
             this.dialogVisible = false;
@@ -60,7 +68,16 @@ export default {
         }
     },
     computed: {
-
+        ...mapState({
+        posts: state => state.post.posts,
+        selectedSort: state => state.post.selectedSort,
+        searchQuery: state => state.post.searchQuery,
+        sortOptions: state => state.post.sortOptions,
+        }),
+        ...mapGetters({
+            sortedPosts: 'post/sortedPosts',
+            searchedPosts: 'post/searchedPosts',
+        }),
     }
 }
 </script>
