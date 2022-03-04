@@ -3,6 +3,7 @@
     <div class="side-navbar-btns">
       <router-link class="side-navbar__link" to="/">Главная</router-link>
       <router-link class="side-navbar__link" to="/characters">Персонажи</router-link>
+      <router-link class="side-navbar__link" to="/wishcounter">Счетчик молитв</router-link>
       <router-link class="side-navbar__link" to="/calculator">Калькулятор</router-link>
       <router-link class="side-navbar__link" to="/todo">Список дел</router-link>
     </div>
