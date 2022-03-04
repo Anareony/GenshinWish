@@ -35,7 +35,7 @@ import MyDialog from '@/components/UI/MyDialog.vue'
 import MyButton from '@/components/UI/MyButton.vue'
 import MySelect from '@/components/UI/MySelect.vue'
 import MyInput from '@/components/UI/MyInput.vue'
-import {mapState, mapGetters, mapActions, mapMutations} from 'vuex'
+import {mapState, mapGetters, mapMutations} from 'vuex'
 
 export default {
     components: {
@@ -55,13 +55,11 @@ export default {
         ...mapMutations({
             setSelectedSort: 'post/setSelectedSort',
             setSearchQuery: 'post/setSearchQuery',
+            removePost: 'post/removePost'
         }),
         createPost(post) {
             this.posts.push(post);
             this.dialogVisible = false;
-        },
-        removePost(post) {
-            this.posts = this.posts.filter(p => p.id !== post.id);
         },
         showDialog() {
             this.dialogVisible = true;
@@ -69,14 +67,14 @@ export default {
     },
     computed: {
         ...mapState({
-        posts: state => state.post.posts,
-        selectedSort: state => state.post.selectedSort,
-        searchQuery: state => state.post.searchQuery,
-        sortOptions: state => state.post.sortOptions,
+            posts: state => state.post.posts,
+            selectedSort: state => state.post.selectedSort,
+            searchQuery: state => state.post.searchQuery,
+            sortOptions: state => state.post.sortOptions,
         }),
         ...mapGetters({
             sortedPosts: 'post/sortedPosts',
-            searchedPosts: 'post/searchedPosts',
+            searchedPosts: 'post/searchedPosts'
         }),
     }
 }

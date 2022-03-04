@@ -33,6 +33,9 @@ export const postModule = {
         },
         setSearchQuery(state, searchQuery) {
             state.searchQuery = searchQuery
-        }
+        },
+        removePost(state, post) {
+            state.posts = state.posts.filter(p => p.id !== post.id);
+        },
     }
 }
