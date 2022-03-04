@@ -1,6 +1,6 @@
 <template>
     <h3>Создание поста</h3>
-    <form @submit.prevent>
+    <form>
         <my-input 
             v-model="post.title"
             class="input" type="text" 
@@ -23,6 +23,7 @@
 
 <script>
 export default {
+    emits: ["create"],
     data() {
         return {
             post: {
