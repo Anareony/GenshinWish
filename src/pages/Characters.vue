@@ -35,9 +35,9 @@ export default {
         searchQuery: '',
         selectedSort: '',
         characters: [
-          {name:'Albedo',    img:'/characters/albedo.png',             weapon:'sword'          },
-          {name:'Aloy',      img:'/characters/aloy.png',               weapon:'bow'            },
-          {name:'Amber',     img:'/characters/amber.png',              weapon:'bow'            },
+          {name:'Albedo',    img:'./characters/albedo.png',             weapon:'sword'          },
+          {name:'Aloy',      img:'./characters/aloy.png',               weapon:'bow'            },
+          {name:'Amber',     img:'./characters/amber.png',              weapon:'bow'            },
           {name:'Itto',      img:'/characters/arataki_itto.png',       weapon:'claymore'       },
           {name:'Barbara',   img:'/characters/barbara.png',            weapon:'catalyst'       },
           {name:'Beidou',    img:'/characters/beidou.png',             weapon:'claymore'       },
