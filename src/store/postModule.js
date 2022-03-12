@@ -4,10 +4,6 @@ export const postModule = {
         posts: [
             {id: 1, title: '11 JS', body: '1Описание поста'},
             {id: 2, title: '3 JS 2', body: '2Описание поста 2'},
-            {id: 3, title: '4 JS ', body: '3Описание поста 3'},
-            {id: 4, title: '7 JS', body: '1Описание поста'},
-            {id: 5, title: '9 JS 2', body: '2Описание поста 2'},
-            {id: 6, title: '10 JS ', body: '3Описание поста 3'},
         ],
         selectedSort: '',
         searchQuery: '',

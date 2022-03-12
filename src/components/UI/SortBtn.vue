@@ -5,7 +5,6 @@
 <script>
 export default {
   name: 'sort-btn',
-
 }
 </script>
 
@@ -15,4 +14,8 @@ export default {
     height: 50px;
     background: white;
   }
+
+  .active {
+    background: blue;
+}
 </style>
