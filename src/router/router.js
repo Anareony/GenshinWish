@@ -4,7 +4,7 @@ import CharacterPage from '@/pages/CharacterPage'
 import Wishcounter from '@/pages/WishCounter'
 import Calculator from '@/pages/Calculator'
 import PostPage from '@/pages/PostPage'
-import { createWebHashHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 
 const routes = [
     {
@@ -34,8 +34,8 @@ const routes = [
 ]
 
 const router = createRouter({
+    history: createWebHistory(process.env.BASE_URL),
     routes,
-    history: createWebHashHistory()
 })
 
 export default router;
